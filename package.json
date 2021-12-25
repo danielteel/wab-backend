@@ -1,0 +1,16 @@
+{
+  "name": "wab-backend",
+  "version": "1.0.0",
+  "description": "backend for wab",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "knex": "^0.95.15",
+    "postgres": "^1.0.2"
+  }
+}
