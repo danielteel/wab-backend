@@ -38,7 +38,7 @@ app.get('/form/:formId/:formPass', async (req, res) => {
         return res.status(404).json({error: 'form not found'});
     }
     console.log('request fullfilled for form ',p)
-    return res.status(200).json(form[0]);
+    return res.status(200).json(form[0].data);
 });
 
 app.post('/form', async (req, res) => {
