@@ -2,7 +2,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable('forms', table=>{
       table.increments();
-      table.json('data');
+      table.jsonb('data');
+      table.string('pass');
   })
 };
 
