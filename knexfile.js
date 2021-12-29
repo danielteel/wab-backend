@@ -17,9 +17,9 @@ module.exports = {
     connection: {
       host:     process.env.WAB_HOST,
       port:     process.env.WAB_PORT,
-      database: process.env.WAB_DATABASE,
+      database: process.env.WAB_DB,
       user:     process.env.WAB_USER,
-      password: process.env.WAB_PASSWORD
+      password: process.env.WAB_PASS
     },
     pool: {min: 2, max: 10},
     seeds: {

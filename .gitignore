@@ -1,7 +1,7 @@
 .npm
 coverage
 node_modules/
-dev/
+*.db3
 .htaccess
 public/
 tmp/

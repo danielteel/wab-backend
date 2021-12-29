@@ -5,7 +5,7 @@ const environment=process.env.NODE_ENV || 'development';
 const knex=require('knex')(require('./knexfile.js')[environment]);
 
 const app = express();
-app.locals.port = 443;
+app.locals.port = environment==='development'?3001:443;
 app.use(cors());
 app.use(express.json());
 
