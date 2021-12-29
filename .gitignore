@@ -2,7 +2,7 @@
 coverage
 node_modules/
 *.db3
-.htaccess
+
 public/
 tmp/
 .env
