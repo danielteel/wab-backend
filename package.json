@@ -7,7 +7,7 @@
     "dev-test": "npm jest",
     "dev-start": "npx nodemon app.js",
     "dev-init": "npx knex migrate:down --env development && npx knex migrate:up --env development && npx knex seed:run --env development",
-    "prod-init": "npx knex migrate:down --env production && npx knex migrate:up --env production && npx knex seed:run --env production"
+    "prod-init": "source ./.env && npx knex migrate:down --env production && npx knex migrate:up --env production && npx knex seed:run --env production"
   },
   "author": "",
   "license": "ISC",
