@@ -2,7 +2,4 @@
 coverage
 node_modules/
 *.db3
-
-public/
-tmp/
 .env
