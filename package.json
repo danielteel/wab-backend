@@ -2,10 +2,10 @@
   "name": "wab-backend",
   "version": "1.0.0",
   "description": "backend for wab",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "npm jest",
-    "start": "npx nodemon index.js"
+    "start": "npx nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +13,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "knex": "^0.95.15",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15",
-    "pg": "^8.7.1",
-    "postgres": "^1.0.2",
     "sqlite3": "^5.0.2"
   }
 }

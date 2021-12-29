@@ -12,32 +12,18 @@ module.exports = {
     useNullAsDefault: true
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'wab',
-      user:     'pi',
-      password: 'pipass1337'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
   production: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'wab',
-      user:     'pi',
-      password: 'pipass1337'
+      host:     process.env.WAB_HOST,
+      port:     process.env.WAB_PORT,
+      database: process.env.WAB_DATABASE,
+      user:     process.env.WAB_USER,
+      password: process.env.WAB_PASSWORD
     },
-    pool: {
-      min: 2,
-      max: 10
+    pool: {min: 2, max: 10},
+    seeds: {
+      directory: './seeds/'
     },
     migrations: {
       tableName: 'knex_migrations'

@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 
-const knex=require('knex')(require('./knexfile.js')['development']);
+const environment=process.env.NODE_ENV || 'development';
+const knex=require('knex')(require('./knexfile.js')[environment]);
 
 const app = express();
 app.locals.port = 443;
