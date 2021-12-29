@@ -4,7 +4,7 @@ const cors = require('cors');
 const knex=require('knex')(require('./knexfile.js')['development']);
 
 const app = express();
-app.locals.port = process.env.PORT || 3001;
+app.locals.port = 443;
 app.use(cors());
 app.use(express.json());
 
@@ -38,7 +38,7 @@ app.get('/form/:formId/:formPass', async (req, res) => {
         return res.status(404).json({error: 'form not found'});
     }
     console.log('request fullfilled for form ',p)
-    return res.status(200).json(form[0].data);
+    return res.status(200).json(JSON.parse(form[0].data));
 });
 
 app.post('/form', async (req, res) => {
