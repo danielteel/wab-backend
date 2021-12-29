@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('forms').insert([
-        {id: 1333, pass: 1547, data: 'placeholder'}
+        {id: 1333, pass: 1547, data: '"placeholder"'}
       ]);
     });
 };
