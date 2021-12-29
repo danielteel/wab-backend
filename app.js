@@ -1,7 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 
-const environment=process.env.NODE_ENV || 'development';
+const environment=process.env.NODE_ENV;
+if (!environment){
+    console.error("Unknown NODE_ENV", environment);
+    throw "Unknown NODE_ENV";
+}
 const knex=require('knex')(require('./knexfile.js')[environment]);
 
 const app = express();
