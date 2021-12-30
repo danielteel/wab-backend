@@ -6,13 +6,14 @@
   "scripts": {
     "dev-start": "npx nodemon app.js",
     "dev-init": "npx knex migrate:down && npx knex migrate:up && npx knex seed:run",
-    "prod-init": "node -r dotenv/config -e '../.env'  npx knex migrate:down && npx knex migrate:up && npx knex seed:run"
+    "prod-init": "npx dotenv -e '../.env'  npx knex migrate:down && npx knex migrate:up && npx knex seed:run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "dotenv-cli": "^4.1.1",
     "express": "^4.17.2",
     "knex": "^0.95.15",
     "mysql": "^2.18.1"
