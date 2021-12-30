@@ -23,7 +23,7 @@ function strictObj(obj, ...list){
     return retObj;
 }
 
-app.get('/form/:formId/:formPass', async (req, res) => {
+app.get('/obj/:formId/:formPass', async (req, res) => {
     const p = strictObj(req.params, 'formId:string','formPass:string');
     if (typeof p==='string'){
         console.warn(req.params);
@@ -44,7 +44,7 @@ app.get('/form/:formId/:formPass', async (req, res) => {
     return res.status(200).json(JSON.parse(form[0].data));
 });
 
-app.post('/form', async (req, res) => {
+app.post('/obj', async (req, res) => {
     if (typeof strictObj(req.body,'id:string','package:object')==='string') return res.status(400).json({error: 'invalid request'});
 
     const secret = req.body.id;
