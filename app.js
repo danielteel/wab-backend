@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 
+fs.writeFileSync('./output.txt',"IM ALIVE");
+
 const environment=process.env.NODE_ENV;
 
-fs.writeFileSync('./output.txt',"NODE_ENV "+environment);
 
 const knex=require('knex')(require('./knexfile.js')[environment]);
 
