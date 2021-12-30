@@ -3,10 +3,9 @@ const cors = require('cors');
 const fs = require('fs');
 
 const environment=process.env.NODE_ENV;
-if (!environment){
-    console.error("Unknown NODE_ENV", environment);
-    fs.writeFileSync('./error.log',"Unknown NODE_ENV "+environment);
-}
+
+fs.writeFileSync('./error.txt',"NODE_ENV "+environment);
+
 const knex=require('knex')(require('./knexfile.js')[environment]);
 
 const app = express();
