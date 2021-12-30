@@ -2,14 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 
-const environment=process.env.NODE_ENV;
+const environment=process.env.NODE_ENV || 'production';
 
 fs.writeFileSync('./error.txt',"NODE_ENV "+environment);
 
 const knex=require('knex')(require('./knexfile.js')[environment]);
 
 const app = express();
-app.locals.port = environment==='development'?3001:443;
+app.locals.port = 443;
 app.use(cors());
 app.use(express.json());
 
