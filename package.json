@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "backend for wab",
   "main": "app.js",
+  "private": "true",
   "scripts": {
     "start": "npx nodemon app.js",
     "initialize": "npx dotenv -e '../.env' npx knex migrate:down   &&   npx dotenv -e '../.env' npx knex migrate:latest   &&   npx dotenv -e '../.env' npx knex seed:run"
